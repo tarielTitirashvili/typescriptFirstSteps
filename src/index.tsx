@@ -1,18 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
-import Layout from './components/layout/Layout'
 import Routing from './components/routes/Routing'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routing>
-      <Layout>
-      </Layout>
-    </Routing>
-    <App />
+    <Routing/>
   </React.StrictMode>,
   document.getElementById('root')
 )

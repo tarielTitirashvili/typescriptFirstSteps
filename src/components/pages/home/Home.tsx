@@ -1,20 +1,18 @@
-import { Button, Grid } from '@mui/material'
+import { Box } from '@mui/system'
 import React, { FC } from 'react'
-import Sidebar from '../../layout/sidebar/Sidebar'
+import AddPost from './HomeComponents/AddPost'
 
 interface Props {}
 
 export const Home: FC = (props: Props) => {
   return (
-    <div>
-      <Grid container spacing={2} marginX={1} marginTop={1} marginY={3}>
-        <Grid item xs={2}>
-          <Sidebar />
-        </Grid>
-        <Grid item xs={10}>
-          fasdasf
-        </Grid>
-      </Grid>
-    </div>
+    <Box sx= {{
+      border: '1px solid #ccc',
+      width: '90%',
+      borderRadius: 10,
+      padding: '10px 10px'
+    }}>
+      <AddPost/>
+    </Box>
   )
 }

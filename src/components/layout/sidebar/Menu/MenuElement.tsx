@@ -2,22 +2,36 @@ import React from 'react'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import { QuestionAnswer } from '@mui/icons-material'
 import { ListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import menuList, { menuListElem } from './MenuList'
 interface Props {}
 
 const MenuElement = (props: Props) => {
   const navigate = useNavigate()
   return (
-    <ListItem onClick = {()=>navigate('/massages')} sx={{backgroundColor: 'lightgrey', marginRight: 0}} disablePadding>
-      <ListItemButton>
-        <ListItemIcon>
-          <QuestionAnswer />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-      </ListItemButton>
-    </ListItem>
+    <>
+    {
+      menuList.map((menuItem: menuListElem)=>{
+        return(
+          <ListItem 
+            key = {menuItem.link} 
+            onClick = {()=>navigate(`${menuItem.link}`)} 
+            sx={{backgroundColor: 'lightgrey', marginRight: 0, marginBottom: `${menuItem.marginBottom}`}} 
+            disablePadding
+          >
+            <ListItemButton >
+              <ListItemIcon sx ={{
+                minWidth: '36px'
+              }}>
+                <menuItem.icon/>
+              </ListItemIcon>
+              <ListItemText primary={`${menuItem.title}`} />
+            </ListItemButton>
+          </ListItem>
+      )})
+    }
+    </>
   )
 }
 

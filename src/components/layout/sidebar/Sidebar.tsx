@@ -6,12 +6,10 @@ interface Props {}
 
 const Sidebar: FC = (props: Props) => {
   return (
-    <div>
-     <UserItem />
-     <UserItem />
+    <>
      <UserItem />
      <MenuElement />
-    </div>
+    </>
   )
 }
 

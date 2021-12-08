@@ -3,7 +3,7 @@ import { Home } from '../pages/home/Home'
 export type route = {
   path: string
   exact: boolean
-  component: Function
+  component: React.FC
   auth: boolean
 }
 
@@ -31,6 +31,24 @@ export const routes: Array<route> = [
     exact: true,
     component: Home,
     auth: true,
+  },
+  {
+    path: '/news',
+    exact: true,
+    component: Home,
+    auth: false,
+  },
+  {
+    path: '/profile',
+    exact: true,
+    component: Home,
+    auth: false,
+  },
+  {
+    path: '/friends',
+    exact: true,
+    component: Home,
+    auth: false,
   },
   {
     path: '/',
