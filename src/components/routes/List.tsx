@@ -1,53 +1,54 @@
+import { IRoute } from '../../types'
+import Auth from '../pages/auth/Auth';
+import Friends from '../pages/friends/Friends';
 import { Home } from '../pages/home/Home'
+import Massages from '../pages/massages/Massages'
+import Profile from '../pages/profile/Profile';
+import News from './../pages/news/News';
+import Conversation from './../pages/massages/massage';
 
-export type route = {
-  path: string
-  exact: boolean
-  component: React.FC
-  auth: boolean
-}
 
-export const routes: Array<route> = [
+export const routes: Array<IRoute> = [
   {
     path: '/profile/:id',
     exact: false,
-    component: Home,
+    component: Profile,
     auth: true,
   },
   {
     path: '/massages',
     exact: true,
-    component: Home,
+    component: Massages,
     auth: true,
   },
   {
     path: '/massage/:id',
     exact: true,
-    component: Home,
+    component: Conversation,
     auth: true,
   },
   {
     path: '/friends/:id',
     exact: true,
-    component: Home,
+    component: Friends,
     auth: true,
   },
   {
     path: '/news',
     exact: true,
-    component: Home,
+    component: News,
     auth: false,
   },
   {
     path: '/profile',
     exact: true,
-    component: Home,
+    component: Profile,
     auth: false,
   },
   {
     path: '/friends',
     exact: true,
-    component: Home,
+    component: Friends,
     auth: false,
   },
   {
@@ -59,7 +60,7 @@ export const routes: Array<route> = [
   {
     path: '/auth',
     exact: true,
-    component: Home,
+    component: Auth,
     auth: false
   }
 ]

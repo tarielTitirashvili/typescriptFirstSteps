@@ -2,15 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Box } from '@mui/system'
 import { Avatar } from '@mui/material'
+import { IUser } from '../../../types'
 
-type user = {
-  userId: number
-  user: string
-  src: string
-  isActive: boolean
-}
 
-const users: Array<user> = [
+export const users: Array<IUser> = [
   {
     userId: 111,
     user: 'mike sunders',
@@ -43,7 +38,7 @@ const UserItem = (props: Props) => {
   return (
     <>
     {
-      users.map((user: user)=>{
+      users.map((user: IUser)=>{
         return(<NavLink key = {user.userId} style={{ textDecoration: 'none' }} to={'/profile/'+user.userId}>
         <Box
           sx={{
@@ -87,7 +82,6 @@ const UserItem = (props: Props) => {
                 </Box>
                 :<span> </span>
               }
-              
             </Box>
           </Box>
         </Box>

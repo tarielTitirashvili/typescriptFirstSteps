@@ -1,8 +1,9 @@
 import *as Icons from '@mui/icons-material'
+import { IMenuItem } from '../../../../types'
 
 
 
- const menuList: Array<menuListElem>=[
+ const menuList: Array<IMenuItem>=[
   {
     title: 'massages',
     link: '/massages',
@@ -25,10 +26,4 @@ import *as Icons from '@mui/icons-material'
     icon: Icons.Person
   }
 ]
-export type menuListElem = {
-  title: string
-  link: string
-  icon: React.FC
-  marginBottom?: string
-}
 export default menuList

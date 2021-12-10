@@ -4,7 +4,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import { ListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import menuList, { menuListElem } from './MenuList'
+import menuList from './MenuList'
+import { IMenuItem } from '../../../../types'
 interface Props {}
 
 const MenuElement = (props: Props) => {
@@ -12,7 +13,7 @@ const MenuElement = (props: Props) => {
   return (
     <>
     {
-      menuList.map((menuItem: menuListElem)=>{
+      menuList.map((menuItem: IMenuItem)=>{
         return(
           <ListItem 
             key = {menuItem.link} 
